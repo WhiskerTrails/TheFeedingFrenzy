@@ -250,7 +250,7 @@ body {
 
 .truck-animation {
   position: absolute;       /* keep up top */
-  top: 75px;             /* adjust vertical position */
+  top: 90px;             /* adjust vertical position */
   left: 0;               /* start at left edge */
   z-index: 9999;         /* ensure it’s above everything else */
   width: 150px;          /* optional, adjust size */
@@ -1824,6 +1824,14 @@ h6,
 /* ==================== MOBILE SETTINGS (max-width: 640px) ==================== */
 
 @media (max-width: 640px) {
+  .truck-animation {
+  position: absolute;       /* keep up top */
+  top: auto;             /* adjust vertical position */
+  left: 0;               /* start at left edge */
+  z-index: 9999;         /* ensure it’s above everything else */
+  width: 150px;          /* optional, adjust size */
+  animation: moveRightToLeft 25s linear infinite;
+}
   .header-logo-image {
   width: auto;
   height: 50px;
@@ -1988,7 +1996,7 @@ h6,
     justify-content: center;
     font-size: 0.1em;
     gap: 5px;
-    margin: 10px 20px 40px 0;
+    margin: auto auto auto auto;
   }
 
   .site-footer {
