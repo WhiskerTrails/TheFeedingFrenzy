@@ -1772,14 +1772,17 @@ main {
 @media (min-width: 641px) {
   .nav-links {
     text-align: right;
+    font-size: small;
+    gap: 5px;
   }
 }
 
   @media (max-width: 640px) {
     .header-logo-image {
-        height: 50px; /* smaller logo for mobile */
+        height: 20px; /* smaller logo for mobile */
+        width: auto;
         margin-top: 0;
-        margin-bottom: 0;
+        margin-bottom: auto;
     }
 }
 
