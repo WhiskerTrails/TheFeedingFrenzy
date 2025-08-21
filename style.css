@@ -250,7 +250,7 @@ body {
 
 .truck-animation {
   position: absolute;       /* keep up top */
-  top: 87px;             /* adjust vertical position */
+  top: 150px;             /* adjust vertical position */
   left: 0;               /* start at left edge */
   z-index: 9999;         /* ensure it’s above everything else */
   width: 150px;          /* optional, adjust size */
@@ -271,6 +271,7 @@ body {
   height: 200px;
   margin-top: -25px;
   margin-bottom: -150px;
+  margin-left: 40px;
 }
 
 .footer-logo-image {
@@ -1691,17 +1692,15 @@ label {
 .nav-links {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  gap: 75px;
+  gap: 150px;
   list-style: none;
   padding: .5px 0;
   margin: 45px;
-  margin-right: 165px;
 }
 
 .nav-links a {
   color: #fff;
-  font-size: 1.25em;
+  font-size: 1.5em;
   font-weight: bold;
   text-decoration: none;
   text-shadow: 2px 2px 4px #000; /* optional shadow */
@@ -1795,6 +1794,13 @@ main {
     padding: 0;
     margin: 0;
   }
+}
+  @media (max-width: 640px) {
+    .header-logo-image {
+        height: 100px; /* smaller logo for mobile */
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 }
 
 .site-footer {
