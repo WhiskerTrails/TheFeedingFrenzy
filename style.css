@@ -271,7 +271,7 @@ body {
   height: 200px;
   margin-top: -25px;
   margin-bottom: -150px;
-  margin-left: 40px;
+  margin-left: -100px;
 }
 
 .footer-logo-image {
@@ -285,7 +285,7 @@ hr {
   height: 1px;
   background: #fff;
   background: linear-gradient(to right, rgba(39, 60, 90, 0.1) 0, rgba(39, 60, 90, 0.6) 50%, rgba(39, 60, 90, 0.1) 100%);
-  margin-top: 60px;
+  margin-top: auto;
   margin-bottom: auto;
 }
 
