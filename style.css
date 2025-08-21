@@ -1824,6 +1824,13 @@ h6,
 /* ==================== MOBILE SETTINGS (max-width: 640px) ==================== */
 
 @media (max-width: 640px) {
+  .header-logo-image {
+  width: auto;
+  height: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+}
   .field-grouped {
     display: flex;
     flex-direction: column; /* stack vertically on mobile */
@@ -1979,8 +1986,8 @@ h6,
 
   .nav-links {
     justify-content: center;
-    font-size: 0.65em;
-    gap: 40px;
+    font-size: 0.1em;
+    gap: 5px;
     margin: 10px 20px 40px 0;
   }
 
