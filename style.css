@@ -1773,22 +1773,22 @@ main {
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  header {
+  .site-header {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  header .logo {
+  .site-header .logo {
     margin-bottom: 10px; /* space between logo and nav */
     text-align: center;
   }
 
-  header nav {
+  .site-header nav {
     text-align: center;
   }
 
-  header nav ul {
+  .site-header nav ul {
     display: flex;
     flex-direction: column; /* stack links vertically if you want */
     gap: 10px; /* spacing between links */
