@@ -1769,35 +1769,15 @@ main {
     padding-bottom: 80px
   }
 }
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .site-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .site-header .logo {
-    margin-bottom: 10px; /* space between logo and nav */
-    text-align: center;
-  }
-
-  .site-header nav {
-    text-align: center;
-  }
-
-  .site-header nav ul {
-    display: flex;
-    flex-direction: column; /* stack links vertically if you want */
-    gap: 10px; /* spacing between links */
-    padding: 0;
-    margin: 0;
+@media (min-width: 641px) {
+  .nav-links {
+    text-align: right;
   }
 }
+
   @media (max-width: 640px) {
     .header-logo-image {
-        height: 100px; /* smaller logo for mobile */
+        height: 50px; /* smaller logo for mobile */
         margin-top: 0;
         margin-bottom: 0;
     }
