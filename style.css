@@ -48,7 +48,7 @@ hr {
 /* Hyperlinks */
 a {
   background-color: transparent;
-  color: #F9425F;
+  color: #Fff;
   text-decoration: none;
 }
 
@@ -215,7 +215,7 @@ button:-moz-focusring,
 /* Truck animation */
 .truck-animation {
   position: absolute;     /* keep up top */
-  top: 90px;      /* adjust vertical position */
+  top: 115px;      /* adjust vertical position */
   left: 0;      /* start at left edge */
   z-index: 9999;      /* ensure it’s above everything else */
   width: 150px;     /* optional, adjust size */
@@ -583,8 +583,7 @@ p {
 .hero {
     position: relative;
     text-align: left;
-    padding-top: 5px;
-    padding-bottom: 5px
+    margin: -75px 0 0 0;
   }
 
   .hero::before {
@@ -698,13 +697,13 @@ p {
   margin-bottom: auto;
 }
 
-/* Footer section */
+/* Footer */
 .site-footer {
   position: relative;
   font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0px;
-  color: #556B8B
+  line-height: 1.4;
+  color: #fff;
+  padding: 8px 16px;             /* minimal height */
 }
 
 .site-footer::before {
@@ -715,52 +714,62 @@ p {
   width: 297px;
   height: 175px;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjk3IiBoZWlnaHQ9IjE3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gIDxkZWZzPiAgICA8bGluZWFyR3JhZGllbnQgeDE9Ijk5LjQzNSUiIHkxPSI4NS4wNzglIiB4Mj0iOC42ODUlIiB5Mj0iMjMuNzMzJSIgaWQ9ImEiPiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiMxRDMwNEIiIG9mZnNldD0iMCUiLz4gICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjMUQzMDRCIiBzdG9wLW9wYWNpdHk9IjAiIG9mZnNldD0iMTAwJSIvPiAgICA8L2xpbmVhckdyYWRpZW50PiAgPC9kZWZzPiAgPHBhdGggZD0iTTMxOC4xNzEgNzA4LjY0YzE2MC4wODYgMCA3MDIuNTI3LTIyOC4yNiAyODkuODYyLTI5MC00MTIuNjY2LTYxLjczOC0xMjkuNzc2LTI5MC0yODkuODYyLTI5MFMyOC4zMSAyNTguNDc5IDI4LjMxIDQxOC42NGMwIDE2MC4xNjMgMTI5Ljc3NSAyOTAgMjg5Ljg2MSAyOTB6IiB0cmFuc2Zvcm09InJvdGF0ZSgtNiAtOTUwLjAxNiAxMDU2LjE0MykiIGZpbGw9InVybCgjYSkiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
-  background-repeat: no-repeat
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
 
-.site-footer a {
-  color: #556B8B;
-  text-decoration: none
-}
-
-.site-footer a:hover,
-.site-footer a:active {
-  text-decoration: underline
-}
-
+/* 3-column, center stays truly centered */
 .site-footer-inner {
-  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;   /* left | center (auto) | right */
+  grid-template-areas: "brand copy right";
+  align-items: center;
+  gap: 12px;
+}
+
+/* Left: logo */
+.footer-brand {
+  grid-area: brand;
   display: flex;
-  flex-wrap: wrap;
-  padding-top: 48px;
-  padding-bottom: 48px
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.footer-brand,
-.footer-links,
-.footer-social-links,
+/* Center: copyright (always centered relative to the footer) */
 .footer-copyright {
-  flex: none;
-  width: 100%;
-  display: inline-flex;
-  justify-content: center
+  grid-area: copy;
+  justify-self: center;
+  text-align: center;
 }
 
-.footer-brand,
+/* Right: nav + socials stacked and right-aligned */
+.bottom-nav-wrap {
+  grid-area: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;   /* right edge */
+  gap: 6px;                /* space between the two rows */
+}
+
+/* Lists look tidy and inline */
 .footer-links,
 .footer-social-links {
-  margin-bottom: 24px
+  display: flex;
+  gap: 16px;               /* spacing between items */
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.footer-links li+li,
-.footer-social-links li+li {
-  margin-left: 16px
+/* Optional: icon/link touch area kept small to minimize height */
+.footer-links a,
+.footer-social-links a {
+  display: inline-block;
+  padding: 2px 0;
 }
 
-.footer-social-links li {
-  display: inline-flex
-}
-
-.footer-social-links li a {
-  padding: 8px
+/* (If you had these before, override to prevent double spacing) */
+.site-footer .footer-links li + li,
+.site-footer .footer-social-links li + li {
+  margin-left: 0;
 }
