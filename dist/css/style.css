@@ -798,34 +798,46 @@ p {
   .truck-animation {
   position: absolute;       /* instead of fixed */
   left: 0;                  /* horizontal start */
-  width: 150px;             /* adjust size */
+  width: 120px;             /* adjust size */
   z-index: 9999;            /* stay above content */
-  top: 100px;
+  top: 250px;
   animation: moveRightToLeft 10s linear infinite;
 }
 
+/* Mobile footer links adjustments */
   .site-footer-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 8px; /* smaller gap between nav & copyright */
   }
 
   .bottom-nav-wrap {
-    align-items: center;  /* center nav + socials */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px; /* spacing between footer nav links and copyright */
+  }
+
+  .footer-links,
+  .footer-social-links {
+    gap: 6px; /* optional: slightly closer links */
   }
 
   .footer-copyright {
+    margin-top: 4px; /* move copyright slightly up */
     margin-bottom: 0;
   }
 
 /* Nav bar text */
 .nav-links {
   display: flex;
-    flex-direction: row;
-    gap: 8px;               /* spacing between links */
-    text-align: center;
-    width: 100%;  
+  flex-direction: row;
+  gap: 8px;               /* spacing between links */
+  justify-content: center; /* center links horizontally */
+  text-align: center;
+  width: auto;             /* shrink to content width */
+  margin: 0 auto;          /* center container */
 }
 
 .nav-links a {
