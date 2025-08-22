@@ -777,18 +777,43 @@ p {
 }
 
 /* Mobile display settings */
-@media (max-width: 640px) {
 
 /* Logo */
-.header-logo-image {
-  width: 75px;            /* smaller logo on mobile */
-  height: auto;
-}
+@media (max-width: 640px) {
+  .header-logo-image {
+    width: 120px;  /* smaller but visible */
+    height: auto; 
+    margin: 0 auto; /* center it */
+    display: block;
+  }
 
-.footer-logo-image {
-  width: 30px;            /* smaller logo on mobile */
-  height: auto;
-}
+  .footer-logo-image {
+    width: 80px;  /* smaller but visible */
+    height: auto; 
+    margin: 0 auto; /* center it */
+    display: block;
+  }
+  
+/* Truck animation */
+  .truck-animation {
+    width: 100px;
+    top: 20px; /* move it closer to top for mobile */
+  }
+
+  .site-footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .bottom-nav-wrap {
+    align-items: center;  /* center nav + socials */
+  }
+
+  .footer-copyright {
+    margin-bottom: 0;
+  }
 
 /* Nav bar text */
 .nav-links {
