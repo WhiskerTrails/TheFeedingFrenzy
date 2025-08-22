@@ -778,24 +778,25 @@ p {
 
 /* Mobile display settings */
 @media (max-width: 640px) {
+
+/* Logo */
 .header-logo-image {
-  width: 120px;            /* smaller logo on mobile */
-    margin-bottom: 8px;
+  width: 75px;            /* smaller logo on mobile */
+  height: auto;
 }
 
 .footer-logo-image {
-  width: 60px;            /* smaller logo on mobile */
-    margin-bottom: 8px;
+  width: 30px;            /* smaller logo on mobile */
+  height: auto;
 }
 
 /* Nav bar text */
 .nav-links {
   display: flex;
-    flex-direction: column;  /* vertical menu on mobile */
-    gap: 12px;               /* spacing between links */
+    flex-direction: row;
+    gap: 8px;               /* spacing between links */
     text-align: center;
-    width: 100%;
-  
+    width: 100%;  
 }
 
 .nav-links a {
@@ -837,4 +838,26 @@ p {
     padding: 8px;
     z-index: 1000;
   }
+/* Social/nav links */
+  .footer-links,
+.footer-social-links {
+  display: inline flex;
+  gap: 8px;               /* spacing between items */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Optional: icon/link touch area kept small to minimize height */
+.footer-links a,
+.footer-social-links a {
+  display: inline-block;
+  padding: 2px 0;
+}
+
+/* (If you had these before, override to prevent double spacing) */
+.site-footer .footer-links li + li,
+.site-footer .footer-social-links li + li {
+  margin-left: 0;
+}
 }
