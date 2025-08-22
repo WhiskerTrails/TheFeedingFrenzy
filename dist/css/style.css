@@ -215,7 +215,7 @@ button:-moz-focusring,
 /* Truck animation */
 .truck-animation {
   position: absolute;     /* keep up top */
-  top: 115px;      /* adjust vertical position */
+  top: 75px;      /* adjust vertical position */
   left: 0;      /* start at left edge */
   z-index: 9999;      /* ensure it’s above everything else */
   width: 150px;     /* optional, adjust size */
@@ -583,7 +583,7 @@ p {
 .hero {
     position: relative;
     text-align: left;
-    margin: -75px 0 0 0;
+    margin: -50px 0 0 0;
   }
 
   .hero::before {
@@ -740,6 +740,7 @@ p {
   grid-area: copy;
   justify-self: center;
   text-align: center;
+  margin-bottom: -80px;
 }
 
 /* Right: nav + socials stacked and right-aligned */
@@ -749,6 +750,7 @@ p {
   flex-direction: column;
   align-items: flex-end;   /* right edge */
   gap: 6px;                /* space between the two rows */
+  margin-bottom: 20px;
 }
 
 /* Lists look tidy and inline */
