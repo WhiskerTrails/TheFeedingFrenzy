@@ -778,111 +778,109 @@ p {
 
 /* Mobile display settings */
 
-/* Logo */
+/* MOBILE LAYOUT - max-width 640px */
 @media (max-width: 640px) {
+
+  /* LOGO */
   .header-logo-image {
-    width: 120px;  /* smaller but visible */
-    height: auto; 
-    margin: 0 auto; /* center it */
+    width: 120px;
+    height: auto;
+    margin: 0 auto;
     display: block;
   }
 
   .footer-logo-image {
-    width: 80px;  /* smaller but visible */
-    height: auto; 
-    margin: 0 auto; /* center it */
+    width: 80px;
+    height: auto;
+    margin: 0 auto;
     display: block;
   }
 
-/* Truck animation */
-  .truck-animation {
-  position: absolute;       /* instead of fixed */
-  left: 0;                  /* horizontal start */
-  width: 120px;             /* adjust size */
-  z-index: 9999;            /* stay above content */
-  top: 250px;
-  animation: moveRightToLeft 10s linear infinite;
-}
+  /* TOP NAV - centered */
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* centers nav horizontally */
+    text-align: center;
+    gap: 8px; 
+    width: 100%;
+  }
 
-/* Mobile footer links adjustments */
+  .nav-links a {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000;
+    transition: color 0.3s;
+  }
+
+  /* TRUCK ANIMATION */
+  .truck-animation {
+    position: absolute;
+    left: 0;
+    width: 120px;
+    z-index: 9999;
+    top: 180px; /* adjust until it sits just above first <hr> */
+    animation: moveRightToLeft 10s linear infinite;
+  }
+
+  /* FOOTER */
   .site-footer-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px; /* smaller gap between nav & copyright */
+    gap: 8px; /* reduce vertical spacing */
   }
 
   .bottom-nav-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px; /* spacing between footer nav links and copyright */
+    gap: 4px; /* smaller space between nav links and copyright */
   }
 
   .footer-links,
   .footer-social-links {
-    gap: 6px; /* optional: slightly closer links */
+    display: inline-flex;
+    gap: 6px; /* slightly closer links */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-links a,
+  .footer-social-links a {
+    display: inline-block;
+    padding: 2px 0;
   }
 
   .footer-copyright {
-    margin-top: 4px; /* move copyright slightly up */
+    margin-top: 4px; /* nudges copyright closer */
     margin-bottom: 0;
   }
 
-/* Nav bar text */
-.nav-links {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;               /* spacing between links */
-  justify-content: center; /* center links horizontally */
-  text-align: center;
-  width: auto;             /* shrink to content width */
-  margin: 0 auto;          /* center container */
-}
+  /* SOCIAL MEDIA ICONS - hide text */
+  .social-media {
+    position: absolute !important; /* hide visually but keep for screen readers */
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+  }
 
-.nav-links a {
-  color: #fff;
-  font-size: 1.5em;
-  font-weight: bold;
-  text-decoration: none;
-  text-shadow: 2px 2px 4px #000; /* optional shadow */
-  transition: color 0.3s;
-}
-
-/* Social media links */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  margin-bottom: -25px;
-  margin-left: -25px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-/* Social/nav links */
-  .footer-links,
-.footer-social-links {
-  display: inline flex;
-  gap: 8px;               /* spacing between items */
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Optional: icon/link touch area kept small to minimize height */
-.footer-links a,
-.footer-social-links a {
-  display: inline-block;
-  padding: 2px 0;
-}
-
-/* (If you had these before, override to prevent double spacing) */
-.site-footer .footer-links li + li,
-.site-footer .footer-social-links li + li {
-  margin-left: 0;
-}
+  .social-media:focus {
+    position: static !important;
+    width: auto;
+    height: auto;
+    clip: auto;
+    overflow: visible;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.6);
+    z-index: 1000;
+  }
 }
