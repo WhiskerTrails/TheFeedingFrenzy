@@ -793,11 +793,11 @@ p {
     margin: 0 auto; /* center it */
     display: block;
   }
-  
+
 /* Truck animation */
   .truck-animation {
     width: 100px;
-    top: 20px; /* move it closer to top for mobile */
+    top: 50px; /* move it closer to top for mobile */
   }
 
   .site-footer-inner {
@@ -834,35 +834,17 @@ p {
 }
 
 /* Social media links */
-.social-media {
-    position: relative !important; /* relative so it flows in footer */
-    clip: auto !important;         /* make visible */
-    height: auto;
-    width: auto;
-    overflow: visible;
-    display: flex;
-    justify-content: center;       /* center icons horizontally */
-    gap: 16px;                     /* spacing between icons */
-    padding: 12px 0;               /* some vertical padding */
-    margin: 0 auto;                /* center container */
-  }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 
-  .social-media a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;               /* larger tap area */
-    color: #F9425F;                /* red color as desired */
-    text-decoration: none;
-  }
-
-  .social-media:focus {
-    clip: auto !important;
-    box-shadow: 0 0 4px rgba(0,0,0,0.6);
-    border-radius: 4px;
-    padding: 8px;
-    z-index: 1000;
-  }
 /* Social/nav links */
   .footer-links,
 .footer-social-links {
