@@ -796,9 +796,13 @@ p {
 
 /* Truck animation */
   .truck-animation {
-    width: 100px;
-    top: 50px; /* move it closer to top for mobile */
-  }
+  position: absolute;       /* instead of fixed */
+  left: 0;                  /* horizontal start */
+  width: 150px;             /* adjust size */
+  z-index: 9999;            /* stay above content */
+  top: 100px;
+  animation: moveRightToLeft 10s linear infinite;
+}
 
   .site-footer-inner {
     display: flex;
@@ -840,6 +844,8 @@ p {
   height: 1px;
   padding: 0;
   margin: -1px;
+  margin-bottom: -25px;
+  margin-left: -25px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
