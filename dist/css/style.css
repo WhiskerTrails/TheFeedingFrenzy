@@ -215,7 +215,7 @@ button:-moz-focusring,
 /* Truck animation */
 .truck-animation {
   position: absolute;     /* keep up top */
-  top: 75px;      /* adjust vertical position */
+  top: 65px;      /* adjust vertical position */
   left: 0;      /* start at left edge */
   z-index: 9999;      /* ensure it’s above everything else */
   width: 150px;     /* optional, adjust size */
@@ -231,21 +231,71 @@ button:-moz-focusring,
   }
 }
 
-/* Logo */
-.header-logo-image {
-  width: auto;
-  height: 200px;
-  margin-top: -25px;
-  margin-bottom: -150px;
-  margin-left: 25px;
+/* Header */
+.site-header {
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 55px;
 }
 
-.footer-logo-image {
+.site-header::after { /* Bottom border line */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px; /* Thickness of the line */
+  background: linear-gradient(to right, 
+    transparent -5%,
+    #000 50%,
+    transparent 105%);
+}
+
+.header-left { /* Header logo */
+  grid-area: brand;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Nav bar text */
+.nav-links {
+  display: flex;
+  justify-content: flex-end;   /* center links on small screens */
+  font-size: 12px;
+  gap: 80px;
+  list-style: none;
+  margin: 40px 0 0 0;
+}
+
+.nav-links a {
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #000; /* optional shadow */
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffc700; /* golden hover effect */
+}
+
+/* Logo */
+.header-logo-image { /* Header logo */
+  width: auto;
+  height: 145px;
+  margin-top: -15px;
+  margin-bottom: -145px;
+  margin-left: -15px;
+}
+
+.footer-logo-image { /* Footer logo */
   width: auto;
   height: 100px;
 }
 
-/* Bullet/number lists */
+/* Bullet/numbered lists */
 ul,
 ol {
   margin-top: 0;
@@ -322,27 +372,19 @@ p {
   color: #fff;
 }
 
-/* Containers */
+/* Body width settings */
 .container,
 .container-sm {
   width: 100%;
   margin: 0 auto ;
-  padding-left: 16px;
-  padding-right: 16px;
 }
 
-.container {
-  max-width: 1128px;
+.container { /* Inner background text box width */
+  max-width: 1180px;
 }
 
-.container-sm {
+.container-sm { /* Top/bottom text sections */
   max-width: 848px;
-}
-
-.container .container-sm {
-  max-width: 800px;
-  padding-left: 0;
-  padding-right: 0;
 }
 
 /* General layout */
@@ -351,6 +393,7 @@ p {
   padding-top: 48px;
   padding-bottom: 48px
 }
+
 /* Social media links */
 .social-media {
   clip: rect(1px, 1px, 1px, 1px);
@@ -409,10 +452,6 @@ p {
   color: #47A1F9;
 }
 
-.has-top-divider {
-  position: relative;
-}
-
 .has-top-divider::before {
   content: '';
   position: absolute;
@@ -420,13 +459,11 @@ p {
   left: 0;
   width: 100%;
   display: block;
-  height: 1px;
-  background: #fff;
-  background: linear-gradient(to right, rgba(39, 60, 90, 0.1) 0, rgba(39, 60, 90, 0.6) 50%, rgba(39, 60, 90, 0.1) 100%);
-}
-
-.has-bottom-divider {
-  position: relative;
+  height: .75px;
+  background: linear-gradient(to right, 
+    transparent -5%,
+    #000 50%,
+    transparent 105%);
 }
 
 .has-bottom-divider::after {
@@ -442,12 +479,12 @@ p {
 }
 
 /* Headings alignment */
-.mt-0 {
+.headings-align {
   margin-top: 0;
 }
 
 /* Paragraph alignment */
-.mb-0 {
+.paragraphs-align {
   margin-bottom: 0;
 }
 
@@ -483,18 +520,9 @@ p {
   flex-grow: 1
 }
 
-.feature-inner {
-  height: 100%
-}
-
 .feature-title {
   font-family: "Heebo", sans-serif;
   font-weight: 500
-}
-
-/* Body wrapper */
-.has-animations .is-revealing {
-  visibility: hidden
 }
 
 /* Email input bar */
@@ -583,7 +611,7 @@ p {
 .hero {
     position: relative;
     text-align: left;
-    margin: -50px 0 0 0;
+    margin: 15px 0 0 0;
   }
 
   .hero::before {
@@ -636,57 +664,44 @@ p {
     margin-right: 16px
   }
 
-/* Nav bar text */
-.nav-links {
-  display: flex;
-  justify-content: flex-end;   /* center links on small screens */
-  font-size: .75em;
-  gap: 80px;
-  list-style: none;
-  margin: 20px 40px 75px 0;
-  
-}
-
-.nav-links a {
-  color: #fff;
-  font-size: 1.5em;
-  font-weight: bold;
-  text-decoration: none;
-  text-shadow: 2px 2px 4px #000; /* optional shadow */
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #ffc700; /* golden hover effect */
-}
-
 /* Bottom text section */
-.newsletter .section-paragraph {
+.bottom-text-bar {
   margin-bottom: 32px
 }
 
-.newsletter-form {
+.bottom-text-bar-form {
   max-width: 440px;
   margin: 0 auto
 }
 
-/* Background style wrapper */
-.is-boxed {
-  background: #FFD700;
+/* Top text section */
+.top-text-bar {
+  margin-bottom: -25px;
+  margin-top: 25px;
 }
 
-.body-wrap {
-  background: #990000;
+/* Background custom wrapper */
+.is-boxed { /* Outer background */
+  background: #FFD700; /* Outer background color */
+}
+
+.body-wrap { /* Inner background */
+  background: #990000; /* Inner background color */
+  background-image: url("dist/images/redcurtain.jpg");
   overflow: hidden;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.boxed-container {
-  max-width: 1430px;
+.boxed-container { /* Inner background */
+  max-width: 1330px; /* Adjust inner background width */
   margin: 0 auto;
-  box-shadow: 0 16px 48px rgba(6, 16, 31, 0.5)
+  box-shadow: 0 16px 88px rgba(6, 16, 31, 0.5)
+}
+
+.has-animations .is-revealing { /* Animated reveal effects */
+  visibility: hidden;
 }
 
 /* Video section */
@@ -703,10 +718,9 @@ p {
   font-size: 14px;
   line-height: 1.4;
   color: #fff;
-  padding: 8px 16px;             /* minimal height */
 }
 
-.site-footer::before {
+.site-footer::before { /* Background art */
   content: '';
   position: absolute;
   bottom: 0;
@@ -727,11 +741,11 @@ p {
 }
 
 /* Left: logo */
-.footer-brand {
-  grid-area: brand;
+.footer-logo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-left: 55px;
 }
 
 /* Center: copyright (always centered relative to the footer) */
@@ -750,6 +764,7 @@ p {
   align-items: flex-end;   /* right edge */
   gap: 6px;                /* space between the two rows */
   margin-bottom: 20px;
+  margin-right: 65px;
 }
 
 /* Lists look tidy and inline */
@@ -769,13 +784,21 @@ p {
   padding: 2px 0;
 }
 
-/* (If you had these before, override to prevent double spacing) */
-.site-footer .footer-links li + li,
-.site-footer .footer-social-links li + li {
-  margin-left: 0;
+/* Social media links footer */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-/* Mobile display settings */
+
+/* Mobile display settings=========================================================================== */
 
 /* Logo */
 @media (max-width: 640px) {
@@ -854,7 +877,6 @@ p {
   text-align: center;
   width: max-content;      /* shrink container to fit links */
   margin: 0 auto;          /* center container under logo */
-  padding: 8px 0;          /* optional vertical spacing under logo */
 }
 
 .nav-links a {
