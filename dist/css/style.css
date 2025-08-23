@@ -7,7 +7,7 @@
   box-sizing: inherit;
 }
 
-/* Base settings */
+/* Base */
 html {
   box-sizing: border-box;
   font-size: 20px;
@@ -598,8 +598,8 @@ p {
 }
 
 .field-grouped>.control.control-expanded {
-  flex-grow: 1;
-  flex-shrink: 1
+  flex-grow: 0; /* stop growing endlessly */
+  flex-basis: 300px; /* or another fixed width */
 }
 
 .field-grouped>.control:not(:last-child) {
